@@ -1,0 +1,36 @@
+{
+  "name": "cypress-from-zero",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:component": "cypress run --component --browser chrome",
+    "cy:open": "cypress open --e2e --browser chrome",
+    "cy:smoke": "cypress run --browser chrome --expose grepTags=@smoke,grepFilterSpecs=true",
+    "cy:run": "cypress run --browser chrome"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "overrides": {
+    "cypress-axe": {
+      "cypress": "$cypress"
+    }
+  },
+  "devDependencies": {
+    "@cypress/grep": "^7.0.0",
+    "@simonsmith/cypress-image-snapshot": "^11.0.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "axe-core": "^4.14.0",
+    "cypress": "^16.3.0",
+    "cypress-axe": "^1.7.0",
+    "cypress-mochawesome-reporter": "^5.0.0",
+    "cypress-multi-reporters": "^2.1.0",
+    "eslint": "^10.14.0",
+    "eslint-plugin-cypress": "^7.0.4",
+    "mocha-junit-reporter": "^2.2.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vite": "^8.3.7"
+  }
+}
