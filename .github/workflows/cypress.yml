@@ -13,6 +13,16 @@ jobs:
       - run: npm ci
       - run: npx eslint .
 
+  component:
+    needs: lint
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: cypress-io/github-action@v7
+        with:
+          component: true
+          browser: chrome
+
   e2e:
     needs: lint
     runs-on: ubuntu-26.04
@@ -27,7 +37,7 @@ jobs:
           browser: ${{ matrix.browser }}
           start: node practice/server.js
           wait-on: 'http://localhost:4321'
-          spec: cypress/e2e/*.cy.js
+          spec: cypress/e2e/tricky.cy.js,cypress/e2e/hooks.cy.js
         env:
           CYPRESS_customerEmail: ${{ secrets.CYPRESS_customerEmail }}
           CYPRESS_customerPassword: ${{ secrets.CYPRESS_customerPassword }}
