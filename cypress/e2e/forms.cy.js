@@ -4,7 +4,8 @@ describe('Forms on the Toolshop', () => {
     cy.get('[data-test="first-name"]').type('Ada')
     cy.get('[data-test="last-name"]').type('Tester')
     cy.get('[data-test="email"]').type('ada@example')
-    cy.get('[data-test="email"]').clear().type('ada@example.com')
+    cy.get('[data-test="email"]').clear()
+    cy.get('[data-test="email"]').type('ada@example.com')
     cy.get('[data-test="subject"]').select('Return')
     cy.get('[data-test="subject"]').should('have.value', 'return')
     cy.get('[data-test="message"]')
@@ -30,8 +31,10 @@ describe('Forms on the Toolshop', () => {
     cy.visit('/')
     cy.contains('label', 'Hand Tools').find('input').check()
     cy.contains('label', 'Hand Tools').find('input').should('be.checked')
-    cy.contains('label', 'Hand Tools').find('input').uncheck().should('not.be.checked')
-    cy.get('[data-test="sort"]').select('Name (A - Z)').should('have.value', 'name,asc')
+    cy.contains('label', 'Hand Tools').find('input').uncheck()
+    cy.contains('label', 'Hand Tools').find('input').should('not.be.checked')
+    cy.get('[data-test="sort"]').select('Name (A - Z)')
+    cy.get('[data-test="sort"]').should('have.value', 'name,asc')
   })
 
   it('shows a menu button on a phone-sized screen',

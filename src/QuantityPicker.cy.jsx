@@ -8,7 +8,8 @@ describe('QuantityPicker', () => {
 
   it('goes up and down', () => {
     cy.mount(<QuantityPicker />)
-    cy.get('[data-test="increase"]').click().click()
+    cy.get('[data-test="increase"]').click()
+    cy.get('[data-test="increase"]').click()
     cy.get('[data-test="quantity"]').should('have.text', '3')
     cy.get('[data-test="decrease"]').click()
     cy.get('[data-test="quantity"]').should('have.text', '2')
@@ -21,7 +22,8 @@ describe('QuantityPicker', () => {
 
   it('stops at the maximum', () => {
     cy.mount(<QuantityPicker start={4} max={5} />)
-    cy.get('[data-test="increase"]').click().should('be.disabled')
+    cy.get('[data-test="increase"]').click()
+    cy.get('[data-test="increase"]').should('be.disabled')
   })
 
   it('reports every change', () => {

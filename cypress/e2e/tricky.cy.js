@@ -42,6 +42,7 @@ describe('Tricky pages', () => {
   })
 
   it('scrolls to the bottom of a long page', () => {
-    cy.get('[data-test="footer-note"]').scrollIntoView().should('be.visible')
+    cy.get('[data-test="footer-note"]').scrollIntoView()
+    cy.get('[data-test="footer-note"]').should('be.visible')
   })
 })
