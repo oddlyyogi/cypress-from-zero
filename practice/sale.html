@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Flash sale</title></head>
+<body>
+  <h1>Flash sale</h1>
+  <p data-test="countdown">Sale ends in 10 seconds</p>
+  <script>
+    let left = 10
+    const timer = setInterval(() => {
+      left = left - 1
+      const text = left > 0 ? 'Sale ends in ' + left + ' seconds' : 'The sale has ended'
+      document.querySelector('[data-test="countdown"]').textContent = text
+      if (left === 0) clearInterval(timer)
+    }, 1000)
+  </script>
+</body>
+</html>

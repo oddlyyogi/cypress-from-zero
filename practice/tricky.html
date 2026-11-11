@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Tricky pages</title></head>
+<body>
+  <h1>Tricky pages</h1>
+
+  <iframe data-test="help-frame" src="frame.html" width="400" height="120"></iframe>
+
+  <shop-badge data-test="badge"></shop-badge>
+  <script>
+    customElements.define('shop-badge', class extends HTMLElement {
+      connectedCallback() {
+        const root = this.attachShadow({ mode: 'open' })
+        root.innerHTML = '<span class="label">Free delivery</span>'
+      }
+    })
+  </script>
+
+  <a data-test="terms-link" href="terms.html" target="_blank">Terms</a>
+  <button data-test="open-help" onclick="window.open('terms.html')">Open help</button>
+
+  <a data-test="download-report" href="report.txt" download>Download report</a>
+
+  <div data-test="menu">
+    Menu
+    <ul data-test="menu-items" hidden><li>Orders</li><li>Invoices</li></ul>
+  </div>
+  <script>
+    const menu = document.querySelector('[data-test="menu"]')
+    const items = document.querySelector('[data-test="menu-items"]')
+    menu.addEventListener('mouseenter', () => { items.hidden = false })
+    menu.addEventListener('mouseleave', () => { items.hidden = true })
+  </script>
+
+  <div style="height: 2000px"></div>
+  <p data-test="footer-note">You reached the bottom.</p>
+</body>
+</html>

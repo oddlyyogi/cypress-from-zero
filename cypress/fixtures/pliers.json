@@ -1,0 +1,38 @@
+{
+  "current_page": 1,
+  "data": [
+    {
+      "id": "01M741XJ9RBPXZ3BG56927GXX7",
+      "name": "Practice Pliers",
+      "description": "Pliers used only in tests.",
+      "price": 9.99,
+      "is_location_offer": false,
+      "is_rental": false,
+      "co2_rating": "D",
+      "in_stock": true,
+      "is_eco_friendly": false,
+      "product_image": {
+        "id": "01M741XJ94WZJ4DX2A7TJXKCD5",
+        "by_name": "Helinton Fantin",
+        "by_url": "https://unsplash.com/@fantin",
+        "source_name": "Unsplash",
+        "source_url": "https://unsplash.com/photos/W8BNwvOvW4M",
+        "file_name": "pliers01.avif",
+        "title": "Combination pliers"
+      },
+      "category": {
+        "id": "01M741XJ8QMBFADZXE5SPQ7ASJ",
+        "name": "Pliers"
+      },
+      "brand": {
+        "id": "01M741XHW9HE07TAEZPJ9T3XNK",
+        "name": "ForgeFlex Tools"
+      }
+    }
+  ],
+  "from": 1,
+  "last_page": 1,
+  "per_page": 9,
+  "to": 1,
+  "total": 1
+}
