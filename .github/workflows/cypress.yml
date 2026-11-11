@@ -38,9 +38,12 @@ jobs:
           start: node practice/server.js
           wait-on: 'http://localhost:4321'
           spec: cypress/e2e/tricky.cy.js,cypress/e2e/hooks.cy.js
+          record: true
+          group: ${{ matrix.browser }}
         env:
-          CYPRESS_customerEmail: ${{ secrets.CYPRESS_customerEmail }}
-          CYPRESS_customerPassword: ${{ secrets.CYPRESS_customerPassword }}
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v7
         if: failure()
         with:
